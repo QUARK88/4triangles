@@ -32,18 +32,24 @@
 <script>
     var max_auto, max_demo, max_auta, max_prog, max_trad, max_libe, max_comm, max_coll, max_mark, max_impe, max_worl, max_isol; // Max possible scores
     max_auto = max_demo = max_auta = max_prog = max_trad = max_libe = max_comm = max_coll = max_mark = max_impe = max_worl = max_isol = 0;
-    var b1, b2, b3, b4, b5, b6; // User's scores
+    var auto, demo, auta, prog, trad, libe, comm, coll, mark, impe, worl, isol; // User's scores
     auto = demo = auta = prog = trad = libe = comm = coll = mark = impe = worl = isol 0;
     var qn = 0; // Question number
     var prev_answer = null;
     init_question();
     for (var i = 0; i < questions.length; i++) {
-        max_b1 += Math.abs(questions[i].effect.b1)
-        max_b2 += Math.abs(questions[i].effect.b2)
-        max_b3 += Math.abs(questions[i].effect.b3)
-        max_b4 += Math.abs(questions[i].effect.b4)
-        max_b5 += Math.abs(questions[i].effect.b5)
-        max_b6 += Math.abs(questions[i].effect.b6)
+        max_auto += Math.abs(questions[i].effect.auto)
+        max_demo += Math.abs(questions[i].effect.demo)
+        max_auta += Math.abs(questions[i].effect.auta)
+        max_prog += Math.abs(questions[i].effect.prog)
+        max_trad += Math.abs(questions[i].effect.trad)
+        max_libe += Math.abs(questions[i].effect.libe)
+        max_comm += Math.abs(questions[i].effect.comm)
+        max_coll += Math.abs(questions[i].effect.coll)
+        max_mark += Math.abs(questions[i].effect.mark)
+        max_impe += Math.abs(questions[i].effect.impe)
+        max_worl += Math.abs(questions[i].effect.worl)
+        max_isol += Math.abs(questions[i].effect.isol)
     }
     function init_question() {
         document.getElementById("question-text").innerHTML = questions[qn].question;
@@ -59,12 +65,18 @@
     }
 
     function next_question(mult) {
-        b1 += mult*questions[qn].effect.b1
-        b2 += mult*questions[qn].effect.b2
-        b3 += mult*questions[qn].effect.b3
-        b4 += mult*questions[qn].effect.b4
-        b5 += mult*questions[qn].effect.b5
-        b6 += mult*questions[qn].effect.b6
+        auto += mult*questions[qn].effect.auto
+        demo += mult*questions[qn].effect.demo
+        auta += mult*questions[qn].effect.auta
+        prog += mult*questions[qn].effect.prog
+        trad += mult*questions[qn].effect.trad
+        libe += mult*questions[qn].effect.libe
+        comm += mult*questions[qn].effect.comm
+        coll += mult*questions[qn].effect.coll
+        mark += mult*questions[qn].effect.mark
+        impe += mult*questions[qn].effect.impe
+        worl += mult*questions[qn].effect.worl
+        isol += mult*questions[qn].effect.isol
         qn++;
         prev_answer = mult;
         if (qn < questions.length) {
@@ -78,12 +90,18 @@
             return;
         }
         qn--;
-        b1 -= prev_answer * questions[qn].effect.b1;
-        b2 -= prev_answer * questions[qn].effect.b2;
-        b3 -= prev_answer * questions[qn].effect.b3;
-        b4 -= prev_answer * questions[qn].effect.b4;
-        b5 -= prev_answer * questions[qn].effect.b5;
-        b6 -= prev_answer * questions[qn].effect.b6;
+        auto -= prev_answer * questions[qn].effect.auto;
+        demo -= prev_answer * questions[qn].effect.demo;
+        auta -= prev_answer * questions[qn].effect.auta;
+        prog -= prev_answer * questions[qn].effect.prog;
+        trad -= prev_answer * questions[qn].effect.trad;
+        libe -= prev_answer * questions[qn].effect.libe;
+        comm -= prev_answer * questions[qn].effect.comm;
+        coll -= prev_answer * questions[qn].effect.coll;
+        mark -= prev_answer * questions[qn].effect.mark;
+        impe -= prev_answer * questions[qn].effect.impe;
+        worl -= prev_answer * questions[qn].effect.worl;
+        isol -= prev_answer * questions[qn].effect.isol;
         prev_answer = null;
         init_question();
 
