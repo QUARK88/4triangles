@@ -13,7 +13,7 @@ questions = [
             "mark": 0,
             "impe": 0,
             "worl": 0,
-            "isol": 0,
+            "isol": 0
         }
     }
 ]
