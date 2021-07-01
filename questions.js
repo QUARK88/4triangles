@@ -2,18 +2,18 @@ questions = [
     {
         "question": ".",
         "effect": {
-            "1auto": 0,
-            "1demo": 0,
-            "1auta": 0,
-            "2prog": 0,
-            "2trad": 0,
-            "2libe": 0,
-            "3comm": 0,
-            "3coll": 0,
-            "3mark": 0,
-            "4impe": 0,
-            "4worl": 0,
-            "4isol": 0,
+            "auto": 0,
+            "demo": 0,
+            "auta": 0,
+            "prog": 0,
+            "trad": 0,
+            "libe": 0,
+            "comm": 0,
+            "coll": 0,
+            "mark": 0,
+            "impe": 0,
+            "worl": 0,
+            "isol": 0,
         }
     }
 ]
